@@ -1,0 +1,21 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div>All Articles</div>
+  <div><p><%= link_to "+ Add a new article", article_path("new") %></p></div>
+</div>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <%= link_to(article_path(article)) do %>
+      <div class="card-product">
+        <img src="https://source.unsplash.com/collection/1454032/breakfast">
+        <div class="card-product-infos">
+          <h2><%= article.title %></h2>
+          <p><%= article.content %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<h3><%= link_to "+ Add a new article", article_path("new") %></h3>
